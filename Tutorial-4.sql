@@ -75,7 +75,7 @@ WHERE (department_id = 40 AND salary>41000)
 OR (department_id = 40 AND hire_date < 2016-02-15;);
 
 
-<T4-Q1>
+<T4-Q4>
 
 <4.1>
 
@@ -107,3 +107,28 @@ Or
 SELECT last_name, hire_date
 FROM employees
 WHERE hire_date >= '2014-01-01' AND hire_date <= '2014-12-01';
+
+
+<T4-Q5>
+
+<5.1>
+
+SELECT last_name, job_id, salary
+FROM employees
+WHERE job IN (902,903)
+AND salary NOT IN (35000, 41000, 51000);
+
+Or
+
+SELECT last_name, job_id, salary
+FROM employees
+WHERE (job_id = 902 OR job_id = 903)
+AND (salary <> 35000 AND salary <> 41000 AND salary <> 51000);
+
+<5.2>
+
+SELECT last_name, job_id, salary, hire_date
+FROM Employee
+WHERE (job_id IN (909,901) AND salary<45000)
+OR (hire_date<'2017-01-03' AND last_name LIKE '%n_');
+
